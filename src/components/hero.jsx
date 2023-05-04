@@ -1,5 +1,6 @@
 import React from "react";
 import Clips from "./utils/Clips.jsx";
+import SocialLinks from "./utils/SocialLinks.jsx";
 
 const Hero = ( {heroapi : {title, subtitle ,btntext, img, sociallinks, videos}}) =>{
 
@@ -16,19 +17,27 @@ const Hero = ( {heroapi : {title, subtitle ,btntext, img, sociallinks, videos}})
                         <h1 className="text-6xl font-extrabold text-slate-200 drop-shadow-sm
                         lg:text5xl md:text-4xl sm:text-3xl xsm:text-2xl">{subtitle}</h1>
                         <button className="button-theme bg-slate-200 shadow-slate-200  rounded-xl my-5" type="button">{btntext}</button>
-                        <div className="">
-                            {videos.map((val, i ) => (
+                        <div className=" ">
+                            <div className=" grid items-center  gap-5 md:gap-3 absolute top-[33vh] lg:top-[27vh] sm:top-[22vh]
+                        left-[11%] xl:left-0 w-auto h-auto  ">
+                            {videos?.map((val, i ) => (
                             <Clips
                                 key={i}
                                 imgsrc={val.imgsrc}
                                 clip={val.clip}
                             />
                         ))}</div>
-                        <div></div>
+                        </div>
+                        <div className="grid items-center absolute top-[33vh] lg:top-[27vh] right-0 gap-3">
+                            {sociallinks?.map((val, i) => (
+                            <SocialLinks
+                            key={i}
+                            icon={val.icon}/>
+                        ))}</div>
                     </div>
                     <div>
-                        <img src={img} alt="hero-img/img" className=" w-auto h-[45vh] lg:h-[35vh]
-                        sm-[25vh] xsm:h-[19vh] transitions-theme -rotate-[25deg] hover:rotate-0 cursor-pointer object-fill"/>
+                        <img src={img} alt="hero-img/img" className="w-auto h-[45vh] lg:h-[35vh]
+                        sm:h-[20vh] xsm:h-[15vh] md:h-[25vh] transitions-theme -rotate-[25deg] hover:rotate-0 cursor-pointer object-fill"/>
                     </div>
                 </div>
             </div>
