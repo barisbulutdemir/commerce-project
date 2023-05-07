@@ -3,7 +3,7 @@ import Title from "./utils/Title";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import { ClockIcon, HashtagIcon, HeartIcon } from "@heroicons/react/24/solid";
-import { truncate } from "lodash"; 
+import _ from 'lodash';
 
 const Stories = ({ story: { title, news } }) => {
 
@@ -54,9 +54,10 @@ const Stories = ({ story: { title, news } }) => {
                     <span className="text-sm font-bold text-blue-600">{val.by}</span>
                   </div>
                 </div>
-                <div className="grid items-center justify-items-start px-4">
+                <div className="grid items-center justify-items-start  px-4">
                   <h1 className="text-base font-semibold lg:text-sm">{val.title}</h1>
-                  <p className="text-sm text-justify lg:text-xs">{truncate(val.text, {length: 175})}</p>
+                  <p className="text-sm text-justify lg:text-xs"> {_.truncate(val.text, { length: 175 })}
+</p>
                 </div>
                 <div className="flex items-center justify-content-center  px-4 w-full">
                   <a className="w-full bg-gradient-to-b from-slate-900 to-black shadow-md shadow-black
