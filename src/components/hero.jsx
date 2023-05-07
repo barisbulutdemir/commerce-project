@@ -2,7 +2,7 @@ import React from "react";
 import Clips from "./utils/Clips.jsx";
 import SocialLinks from "./utils/SocialLinks.jsx";
 
-const Hero = ( {heroapi : { title, subtitle ,btntext, img, sociallinks, videos }}) =>{
+const Hero = ( { heroapi : { title , subtitle ,btntext, img, sociallinks, videos }}) =>{
 
     return(
         <>
